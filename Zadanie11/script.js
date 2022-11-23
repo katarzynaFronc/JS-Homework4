@@ -7,7 +7,12 @@ let students = [student1, student2, student3, student4, student5];
 console.log(students);
 
 function addNewstudent(name, lastName, personalIdentityNumber, fieldOfStudy, notes) {
-  const id = Math.floor(Math.random() * 1001);
+  function getRandomId(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+  const id = getRandomId(100, 999);
   const newStudent = {
     id: id,
     name: name,
@@ -19,3 +24,5 @@ function addNewstudent(name, lastName, personalIdentityNumber, fieldOfStudy, not
   students.push(newStudent);
   console.log(students);
 }
+
+// addNewstudent("Ilona", "Brain", 777888999, "Alienology", [2, 5, 2, 5, 2, 5]);
