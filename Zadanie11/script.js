@@ -5,7 +5,7 @@ const students = [
   { id: 46, name: "Anna", lastName: "Stardust", pesel: 222333444, fieldOfStudy: "Astronomy", notes: [4, 4, 5, 3, 4, 5] },
   { id: 34, name: "Tom", lastName: "Major", pesel: 111222333, fieldOfStudy: "Astronautics", notes: [3, 4, 2, 4, 3, 4] },
   { id: 26, name: "Kate", lastName: "Moon", pesel: 555666777, fieldOfStudy: "Architecture", notes: [5, 4, 3, 4, 5, 4] },
-  { id: 32, name: "Adam", lastName: "Nowak", pesel: 333444555, fieldOfStudy: "PoliticalScience", notes: [3, 2, 2, 4, 5, 4] },
+  { id: 32, name: "Adam", lastName: "Nowak", pesel: 333444555, fieldOfStudy: "PoliticalScience", notes: [3, 2, 2, 2, 3, 2] },
 ];
 
 console.log(students);
@@ -42,3 +42,14 @@ students.map(function (student) {
   const ordinalNumber = index + 1;
   console.log(`Student ${ordinalNumber}: ${student.name} ${student.lastName}, PESEL: ${student.pesel}, Fields of study: ${student.fieldOfStudy}`);
 });
+
+//Exercise 4
+//`Max note for student Ewa Nowak is 5`
+
+function getMaxNote(students, pesel) {
+  const peselNumber = students.findIndex((element) => element.pesel == pesel);
+  const studentNotes = Math.max(...students[peselNumber].notes);
+  console.log(studentNotes);
+}
+
+getMaxNote(students, 333444555);
