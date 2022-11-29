@@ -38,5 +38,7 @@ addNewstudent("Ilona", "Brain", 777888999, "Alienology", [2, 5, 2, 5, 2, 5]);
 // function that displays a list of students
 
 students.map(function (student) {
-  console.log(`Student ${student.id}: ${student.name} ${student.lastName}, PESEL: ${student.pesel}, Fields of study: ${student.fieldOfStudy}`);
+  const index = students.indexOf(student);
+  const ordinalNumber = index + 1;
+  console.log(`Student ${ordinalNumber}: ${student.name} ${student.lastName}, PESEL: ${student.pesel}, Fields of study: ${student.fieldOfStudy}`);
 });
