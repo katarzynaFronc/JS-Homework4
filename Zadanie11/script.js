@@ -1,11 +1,11 @@
 // Exercise 1
 // Array with students data
 const students = [
-  { id: 12, name: "Jan", lastName: "Kowalski", pesel: 111222333, fieldOfStudy: "Informatics", notes: [3, 4, 2, 4, 3, 4] },
-  { id: 46, name: "Anna", lastName: "Stardust", pesel: 222333444, fieldOfStudy: "Astronomy", notes: [4, 4, 5, 3, 4, 5] },
-  { id: 34, name: "Tom", lastName: "Major", pesel: 444555666, fieldOfStudy: "Astronautics", notes: [5, 4, 4, 4, 5, 4] },
-  { id: 26, name: "Kate", lastName: "Moon", pesel: 555666777, fieldOfStudy: "Architecture", notes: [5, 4, 3, 4, 5, 4] },
-  { id: 32, name: "Adam", lastName: "Nowak", pesel: 333444555, fieldOfStudy: "PoliticalScience", notes: [3, 2, 2, 2, 3, 2] },
+  { id: 12, name: "Jan", lastName: "Kowalski", pesel: "111222333", fieldOfStudy: "Informatics", notes: [3, 4, 2, 4, 3, 4] },
+  { id: 46, name: "Anna", lastName: "Stardust", pesel: "222333444", fieldOfStudy: "Astronomy", notes: [4, 4, 5, 3, 4, 5] },
+  { id: 34, name: "Tom", lastName: "Major", pesel: "444555666", fieldOfStudy: "Astronautics", notes: [5, 4, 4, 4, 5, 4] },
+  { id: 26, name: "Kate", lastName: "Moon", pesel: "555666777", fieldOfStudy: "Architecture", notes: [5, 4, 3, 4, 5, 4] },
+  { id: 32, name: "Adam", lastName: "Nowak", pesel: "333444555", fieldOfStudy: "PoliticalScience", notes: [3, 2, 2, 2, 3, 2] },
 ];
 
 console.log(students);
@@ -32,7 +32,7 @@ function addNewstudent(name, lastName, pesel, fieldOfStudy, notes) {
   console.log(students);
 }
 
-addNewstudent("Ilona", "Brain", 777888999, "Alienology", [2, 5, 2, 5, 2, 5]);
+addNewstudent("Ilona", "Brain", "777888999", "Alienology", [2, 5, 2, 5, 2, 5]);
 
 // Exercise 3
 // function that displays a list of students
@@ -44,7 +44,7 @@ students.map(function (student) {
 });
 
 //Exercise 4
-//`Max note for student Ewa Nowak is 5`
+// function getMaxNote
 
 function getMaxNote(students, pesel) {
   const studentIndex = students.findIndex((element) => element.pesel == pesel);
@@ -52,12 +52,13 @@ function getMaxNote(students, pesel) {
   console.log(`Max note for student ${students[studentIndex].name} ${students[studentIndex].lastName} is ${maxNote}`);
 }
 
-getMaxNote(students, 555666777);
+getMaxNote(students, "555666777");
 
+// function getMinNote
 function getMinNote(students, pesel) {
   const studentIndex = students.findIndex((element) => element.pesel == pesel);
   const minNote = Math.min(...students[studentIndex].notes);
-  console.log(`Max note for student ${students[studentIndex].name} ${students[studentIndex].lastName} is ${minNote}`);
+  console.log(`Min note for student ${students[studentIndex].name} ${students[studentIndex].lastName} is ${minNote}`);
 }
 
-getMinNote(students, 444555666);
+getMinNote(students, "444555666");
