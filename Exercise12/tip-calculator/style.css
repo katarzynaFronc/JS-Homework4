@@ -12,4 +12,23 @@ body {
   font-family: "Space Mono", monospace;
   font-size: 24px;
   background-color: var(--color-neutral-light-grayish-cyan);
+  background-image: url(./images/logo.svg);
+  background-repeat: no-repeat;
+  background-position: top 170px right 50%;
+  width: auto;
+  height: 100vh;
+}
+
+.background {
+}
+
+.form__container {
+  display: flex;
+  flex-direction: row;
+  width: 860px;
+  height: 500;
+  margin: auto;
+  margin-top: 300px;
+  background-color: var(--color-neutral-white);
+  border-radius: 20px;
 }
