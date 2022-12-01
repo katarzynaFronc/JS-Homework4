@@ -3,31 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
     <title>Tip calculator app</title>
   </head>
   <body>
-    <img src="./images/logo.svg" alt="logo" />
-    <div>
-      <p>Bill</p>
-      <input placeholder="0" type="text" />
-      <p>Select Tip %</p>
-      <button>5%</button>
-      <button>10%</button>
-      <button>15%</button>
-      <button>25%</button>
-      <button>50%</button>
-      <input placeholder="Custom" type="text" />
-      <p>Number of People</p>
-      <input placeholder="0" type="text" />
+    <header>
+      <img class="background" src="./images/logo.svg" alt="logo" />
+    </header>
+    <form class="form__container">
+      <p class="form__labelDark">Bill</p>
+      <input class="form__input--field" placeholder="0" type="text" />
+      <p class="form__labelDark">Select Tip %</p>
+      <button class="form__button--small">5%</button>
+      <button class="form__button--small">10%</button>
+      <button class="form__button--small">15%</button>
+      <button class="form__button--small">25%</button>
+      <button class="form__button--small">50%</button>
+      <input class="form__input--fieldCustom" placeholder="Custom" type="text" />
+      <p class="form__labelDark">Number of People</p>
+      <input class="form__input--field" placeholder="0" type="text" />
       <div>
-        <p>Tip Amount</p>
-        <p>/ person</p>
-        <h3>$0.00</h3>
-        <p>Total</p>
-        <p>/ person</p>
-        <h3>$0.00</h3>
-        <button>Reset</button>
+        <p class="form__labelLight">Tip Amount</p>
+        <p class="form__caption">/ person</p>
+        <h3 class="form__amount">$0.00</h3>
+        <p Total class="form__labelLight"></p>
+        <p class="form__caption">/ person</p>
+        <h3 class="form__amount">$0.00</h3>
+        <button class="form__button--big">Reset</button>
       </div>
-    </div>
+    </form>
   </body>
 </html>
