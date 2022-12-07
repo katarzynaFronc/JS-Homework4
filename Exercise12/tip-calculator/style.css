@@ -1,4 +1,5 @@
 :root {
+  /* -----------colors----------- */
   --color-primary-strong-cyan: hsl(172, 67%, 45%);
   --color-neutral-very-dark-cyan: hsl(183, 100%, 15%);
   --color-neutral-dark-grayish-cyan: hsl(186, 14%, 43%);
@@ -6,19 +7,23 @@
   --color-neutral-light-grayish-cyan: hsl(185, 41%, 84%);
   --color-neutral-very-light-grayish-cyan: hsl(189, 41%, 97%);
   --color-neutral-white: hsl(0, 0%, 100%);
+  /* -----------fonts----------- */
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
 }
 
 body {
-  font-family: "Space Mono", monospace;
-  font-size: 24px;
   background-color: var(--color-neutral-light-grayish-cyan);
   background-image: url(./images/logo.svg);
   background-repeat: no-repeat;
   background-position: top 140px right 50%;
   width: auto;
   height: 100vh;
+  margin: 0;
 }
+/* ----------------------------- */
 
+/* -----------content----------- */
 .content {
   display: flex;
   flex-direction: row;
@@ -32,7 +37,7 @@ body {
 }
 
 .content__form {
-  width: 440px;
+  width: 52%;
   height: 400px;
 }
 
@@ -95,7 +100,7 @@ body {
 
 .content__result {
   background-color: var(--color-neutral-very-dark-cyan);
-  width: 400px;
+  width: 48%;
   border-radius: 15px;
 }
 
@@ -136,6 +141,7 @@ span {
   border: none;
   border-radius: 8px;
 }
+/*--------------------------------*/
 
 /*-------------media--------------*/
 
@@ -156,7 +162,7 @@ span {
   }
   .content__form {
     width: 100%;
-    height: 350px;
+    height: auto;
     margin: 0;
   }
 
@@ -167,12 +173,13 @@ span {
     justify-content: space-between;
     margin: auto;
     margin-bottom: 20px;
+    height: auto;
   }
   .content__result {
     width: 100%;
     margin: auto;
-    margin-top: 100px;
-    height: 250px;
+    margin-top: 20px;
+    height: auto;
   }
 
   .form--inputField {
@@ -180,9 +187,13 @@ span {
   }
 
   .form--label {
-    font-size: 0.6em;
+    font-size: 0.5em;
     color: var(--color-neutral-grayish-cyan);
     margin-bottom: 5px;
+  }
+
+  .form--inputField {
+    padding: 2px 15px;
   }
 
   .form--inputField.Bill {
@@ -202,5 +213,10 @@ span {
 
   .reset--button {
     margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  .result--label {
+    font-size: 0.5em;
   }
 }
