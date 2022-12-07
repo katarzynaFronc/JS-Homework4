@@ -16,13 +16,12 @@ body {
   background-repeat: no-repeat;
   background-position: top 140px right 50%;
   width: auto;
-  height: 100%;
+  height: 100vh;
 }
 
 .content {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   width: 840px;
   height: 400px;
   margin: auto;
@@ -33,20 +32,17 @@ body {
 }
 
 .content__form {
-  width: 420px;
+  width: 440px;
   height: 400px;
 }
 
 .form--label {
   font-size: 0.6em;
   color: var(--color-neutral-grayish-cyan);
-  margin-left: 20px;
   margin-bottom: 5px;
 }
 
 .form--inputField {
-  display: flex;
-  flex-direction: row;
   margin: auto;
   padding: 5px 15px;
   font-family: "Space Mono", monospace;
@@ -61,7 +57,7 @@ body {
 .form--inputField.Bill {
   background: url(images/icon-dollar.svg) no-repeat 5% 50%;
   background-color: var(--color-neutral-very-light-grayish-cyan);
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 }
 
 .form--inputField.People {
@@ -71,9 +67,10 @@ body {
 
 .form--buttons {
   display: grid;
-  grid-template-columns: repeat(3, 120px);
-  gap: 15px;
-  margin: 0 15px 45px 15px;
+  grid-template-columns: repeat(auto-fill, 120px);
+  gap: 22px;
+  margin: auto;
+  margin-bottom: 40px;
 }
 
 .form--buttonSmall {
@@ -107,9 +104,6 @@ body {
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr auto;
   padding: 35px;
-  height: 170px;
-  background-color: var(--card-bg-color);
-  border-radius: 5px;
 }
 .result--label {
   font-size: 0.6em;
@@ -130,7 +124,7 @@ span {
   display: flex;
   justify-content: center;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 100px;
   padding: 10px 10px;
   background-color: var(--color-primary-strong-cyan);
   opacity: 20%;
@@ -141,4 +135,72 @@ span {
   width: 85%;
   border: none;
   border-radius: 8px;
+}
+
+/*-------------media--------------*/
+
+@media screen and (max-width: 376px) {
+  body {
+    max-width: 375px;
+    background-position: top 50px right 50%;
+    margin: 0;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100vh;
+    margin-top: 150px;
+    border-radius: 20px 20px 0 0;
+  }
+  .content__form {
+    width: 100%;
+    height: 350px;
+    margin: 0;
+  }
+
+  .form--buttons {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .content__result {
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+    height: 250px;
+  }
+
+  .form--inputField {
+    width: 90%;
+  }
+
+  .form--label {
+    font-size: 0.6em;
+    color: var(--color-neutral-grayish-cyan);
+    margin-bottom: 5px;
+  }
+
+  .form--inputField.Bill {
+    margin-bottom: 15px;
+  }
+
+  .result--container {
+    padding: 20px;
+    height: 140px;
+  }
+
+  .result--amount {
+    font-size: 1.4em;
+    color: var(--color-primary-strong-cyan);
+    margin: 0;
+  }
+
+  .reset--button {
+    margin-top: 0;
+  }
 }
