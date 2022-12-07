@@ -10,31 +10,30 @@
     <title>Tip calculator app</title>
   </head>
   <body>
-    <!-- <header>
-      <img class="background" src="./images/logo.svg" alt="logo" />
-    </header> -->
-    <form class="form__container">
-      <div>
-        <p class="form__labelDark">Bill</p>
-        <input class="form__input--field" placeholder="0" type="text" />
-        <p class="form__labelDark">Select Tip %</p>
-        <button class="form__button--small">5%</button>
-        <button class="form__button--small">10%</button>
-        <button class="form__button--small">15%</button>
-        <button class="form__button--small">25%</button>
-        <button class="form__button--small">50%</button>
-        <input class="form__input--fieldCustom" placeholder="Custom" type="text" />
-        <p class="form__labelDark">Number of People</p>
-        <input class="form__input--field" placeholder="0" type="text" />
+    <form class="content">
+      <div class="content__form">
+        <p class="form--label">Bill</p>
+        <input class="form--inputField Bill" placeholder="0" type="text" />
+        <p class="form--label">Select Tip %</p>
+        <div class="form--buttons">
+          <button class="form--buttonSmall">5%</button>
+          <button class="form--buttonSmall">10%</button>
+          <button class="form--buttonSmall">15%</button>
+          <button class="form--buttonSmall">25%</button>
+          <button class="form--buttonSmall">50%</button>
+          <input class="form--inputFieldCustom" placeholder="Custom" type="text" />
+        </div>
+        <p class="form--label">Number of People</p>
+        <input class="form--inputField People" placeholder="0" type="text" />
       </div>
-      <div>
-        <p class="form__labelLight">Tip Amount</p>
-        <p class="form__caption">/ person</p>
-        <h3 class="form__amount">$0.00</h3>
-        <p Total class="form__labelLight"></p>
-        <p class="form__caption">/ person</p>
-        <h3 class="form__amount">$0.00</h3>
-        <button class="form__button--big">Reset</button>
+      <div class="content__result">
+        <div class="result--container">
+          <p class="result--label">Tip Amount<br /><span>/ person</span></p>
+          <h3 class="result--amount">$0.00</h3>
+          <p Total class="result--label">Total<br /><span>/ person</span></p>
+          <h3 class="result--amount">$0.00</h3>
+        </div>
+        <button class="reset--button">Reset</button>
       </div>
     </form>
   </body>

@@ -14,21 +14,131 @@ body {
   background-color: var(--color-neutral-light-grayish-cyan);
   background-image: url(./images/logo.svg);
   background-repeat: no-repeat;
-  background-position: top 170px right 50%;
+  background-position: top 140px right 50%;
   width: auto;
-  height: 100vh;
+  height: 100%;
 }
 
-.background {
-}
-
-.form__container {
+.content {
   display: flex;
   flex-direction: row;
-  width: 860px;
-  height: 500;
+  justify-content: space-between;
+  width: 840px;
+  height: 400px;
   margin: auto;
-  margin-top: 300px;
+  margin-top: 270px;
   background-color: var(--color-neutral-white);
   border-radius: 20px;
+  padding: 30px;
+}
+
+.content__form {
+  width: 420px;
+  height: 400px;
+}
+
+.form--label {
+  font-size: 0.6em;
+  color: var(--color-neutral-grayish-cyan);
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.form--inputField {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding: 5px 15px;
+  font-family: "Space Mono", monospace;
+  color: var(--color-neutral-very-dark-cyan);
+  width: 85%;
+  border: none;
+  border-radius: 8px;
+  text-align: right;
+  font-size: 1em;
+}
+
+.form--inputField.Bill {
+  background: url(images/icon-dollar.svg) no-repeat 5% 50%;
+  background-color: var(--color-neutral-very-light-grayish-cyan);
+  margin-bottom: 45px;
+}
+
+.form--inputField.People {
+  background: url(images/icon-person.svg) no-repeat 5% 50%;
+  background-color: var(--color-neutral-very-light-grayish-cyan);
+}
+
+.form--buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  gap: 15px;
+  margin: 0 15px 45px 15px;
+}
+
+.form--buttonSmall {
+  background-color: var(--color-neutral-very-dark-cyan);
+  font-family: "Space Mono", monospace;
+  color: var(--color-neutral-very-light-grayish-cyan);
+  font-size: 1em;
+  padding: 5px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.form--inputFieldCustom {
+  background-color: var(--color-neutral-very-light-grayish-cyan);
+  font-family: "Space Mono", monospace;
+  color: var(--color-neutral-very-dark-cyan);
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.content__result {
+  background-color: var(--color-neutral-very-dark-cyan);
+  width: 400px;
+  border-radius: 15px;
+}
+
+.result--container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+  padding: 35px;
+  height: 170px;
+  background-color: var(--card-bg-color);
+  border-radius: 5px;
+}
+.result--label {
+  font-size: 0.6em;
+  color: var(--color-neutral-very-light-grayish-cyan);
+}
+
+span {
+  color: var(--color-neutral-grayish-cyan);
+}
+
+.result--amount {
+  font-size: 2em;
+  color: var(--color-primary-strong-cyan);
+  margin: 0;
+}
+
+.reset--button {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 80px;
+  padding: 10px 10px;
+  background-color: var(--color-primary-strong-cyan);
+  opacity: 20%;
+  font-family: "Space Mono", monospace;
+  color: var(--color-neutral-very-dark-cyan);
+  text-transform: uppercase;
+  font-size: 0.8em;
+  width: 85%;
+  border: none;
+  border-radius: 8px;
 }
