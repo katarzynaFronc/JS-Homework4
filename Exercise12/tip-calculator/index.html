@@ -11,30 +11,34 @@
   </head>
   <body>
     <form class="content">
-      <div class="content__form">
-        <p class="form--label">Bill</p>
-        <input class="form--inputField Bill" placeholder="0" type="text" />
+      <section id="form">
+        <h6 class="form--label">Bill</h6>
+        <input id="bill" class="form--inputField" type="text" placeholder="0" />
         <p class="form--label">Select Tip %</p>
-        <div class="form--buttons">
-          <button class="form--buttonSmall">5%</button>
-          <button class="form--buttonSmall">10%</button>
-          <button class="form--buttonSmall">15%</button>
-          <button class="form--buttonSmall">25%</button>
-          <button class="form--buttonSmall">50%</button>
-          <input class="form--inputFieldCustom" placeholder="Custom" type="text" />
+        <div id="tipPercent" class="form--buttons">
+          <button value="0.05" class="form--buttonSmall">5%</button>
+          <button value="0.1" class="form--buttonSmall">10%</button>
+          <button value="0.15" class="form--buttonSmall">15%</button>
+          <button value="0.25" class="form--buttonSmall">25%</button>
+          <button value="0.5" class="form--buttonSmall">50%</button>
+          <input id="custom" class="form--inputFieldCustom" placeholder="Custom" type="text" />
         </div>
-        <p class="form--label">Number of People</p>
-        <input class="form--inputField People" placeholder="0" type="text" />
-      </div>
-      <div class="content__result">
+        <div class="form--labels">
+          <h6 class="form--label">Number of People</h6>
+          <h6 class="form--label zero">Can't be zero</h6>
+        </div>
+        <input id="people" class="form--inputField" placeholder="0" type="text" />
+      </section>
+      <!-- form end -->
+      <section class="result">
         <div class="result--container">
           <p class="result--label">Tip Amount<br /><span>/ person</span></p>
-          <h3 class="result--amount">$0.00</h3>
+          <div id="resultAmount" class="result--amount">$0.00</div>
           <p Total class="result--label">Total<br /><span>/ person</span></p>
-          <h3 class="result--amount">$0.00</h3>
+          <h3 id="resultTotal" class="result--amount">$0.00</h3>
         </div>
         <button class="reset--button">Reset</button>
-      </div>
+      </section>
     </form>
   </body>
 </html>

@@ -36,15 +36,27 @@ body {
   padding: 30px;
 }
 
-.content__form {
+#form {
   width: 52%;
   height: 400px;
 }
 
+.form--labels {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
 .form--label {
+  display: inline;
   font-size: 0.6em;
   color: var(--color-neutral-grayish-cyan);
+  margin: 0;
   margin-bottom: 5px;
+}
+
+.form--label.zero {
+  color: rgb(216, 70, 70);
+  display: none;
 }
 
 .form--inputField {
@@ -59,13 +71,18 @@ body {
   font-size: 1em;
 }
 
-.form--inputField.Bill {
+.form--inputField:hover {
+  border: 3px solid var(--color-neutral-light-grayish-cyan);
+  cursor: pointer;
+}
+
+#bill {
   background: url(images/icon-dollar.svg) no-repeat 5% 50%;
   background-color: var(--color-neutral-very-light-grayish-cyan);
   margin-bottom: 30px;
 }
 
-.form--inputField.People {
+#people {
   background: url(images/icon-person.svg) no-repeat 5% 50%;
   background-color: var(--color-neutral-very-light-grayish-cyan);
 }
@@ -88,6 +105,12 @@ body {
   border-radius: 5px;
 }
 
+.form--buttonSmall:hover {
+  background: var(--color-neutral-light-grayish-cyan);
+  color: var(--color-neutral-very-dark-cyan);
+  cursor: pointer;
+}
+
 .form--inputFieldCustom {
   background-color: var(--color-neutral-very-light-grayish-cyan);
   font-family: "Space Mono", monospace;
@@ -98,7 +121,12 @@ body {
   text-align: center;
 }
 
-.content__result {
+.form--inputFieldCustom:hover {
+  border: 3px solid var(--color-neutral-light-grayish-cyan);
+  cursor: pointer;
+}
+
+.result {
   background-color: var(--color-neutral-very-dark-cyan);
   width: 48%;
   border-radius: 15px;
@@ -141,6 +169,12 @@ span {
   border: none;
   border-radius: 8px;
 }
+
+.reset--button:hover {
+  background-color: var(--color-neutral-light-grayish-cyan);
+  opacity: 100;
+}
+
 /*--------------------------------*/
 
 /*-------------media--------------*/
@@ -160,7 +194,7 @@ span {
     margin-top: 150px;
     border-radius: 20px 20px 0 0;
   }
-  .content__form {
+  .form {
     width: 100%;
     height: auto;
     margin: 0;
@@ -175,7 +209,7 @@ span {
     margin-bottom: 20px;
     height: auto;
   }
-  .content__result {
+  .result {
     width: 100%;
     margin: auto;
     margin-top: 20px;
