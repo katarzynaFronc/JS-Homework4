@@ -10,35 +10,44 @@
     <title>Tip calculator app</title>
   </head>
   <body>
-    <form class="content">
-      <section id="form">
-        <h6 class="form--label">Bill</h6>
-        <input id="bill" class="form--inputField" type="text" placeholder="0" />
-        <p class="form--label">Select Tip %</p>
-        <div id="tipPercent" class="form--buttons">
-          <button value="0.05" class="form--buttonSmall">5%</button>
-          <button value="0.1" class="form--buttonSmall">10%</button>
-          <button value="0.15" class="form--buttonSmall">15%</button>
-          <button value="0.25" class="form--buttonSmall">25%</button>
-          <button value="0.5" class="form--buttonSmall">50%</button>
-          <input id="custom" class="form--inputFieldCustom" placeholder="Custom" type="text" />
+    <div class="tipCalculator">
+      <div id="form">
+        <label for="bill" class="form--label">Bill</label>
+        <input type="number" id="bill" class="form--inputField inputBill" placeholder="0" min="0" />
+        <label for="" class="form--label">Select Tip %</label>
+        <div class="form--tipButtons">
+          <button value="0.05" class="form--tip tip-5">5%</button>
+          <button value="0.1" class="form--tip tip-10">10%</button>
+          <button value="0.15" class="form--tip tip-15">15%</button>
+          <button value="0.25" class="form--tip tip-25">25%</button>
+          <button value="0.5" class="form--tip tip-50">50%</button>
+          <input id="custom" class="form--inputField customTip" placeholder="Custom" type="number" />
         </div>
-        <div class="form--labels">
-          <h6 class="form--label">Number of People</h6>
-          <h6 class="form--label zero">Can't be zero</h6>
+        <div class="form--labels labelPeople">
+          <label for="" class="form--label">Number of People</label>
+          <label class="error">Can't be zero</label>
         </div>
-        <input id="people" class="form--inputField" placeholder="0" type="text" />
-      </section>
+        <input type="number" id="people" class="form--inputField inputPeople" placeholder="0" />
+      </div>
       <!-- form end -->
-      <section class="result">
-        <div class="result--container">
-          <p class="result--label">Tip Amount<br /><span>/ person</span></p>
+      <div class="result">
+        <div class="tipAmount">
+          <div class="text">
+            <p class="result--label">Tip Amount</p>
+            <p class="person">/ person</p>
+          </div>
           <div id="resultAmount" class="result--amount">$0.00</div>
-          <p Total class="result--label">Total<br /><span>/ person</span></p>
-          <h3 id="resultTotal" class="result--amount">$0.00</h3>
         </div>
-        <button class="reset--button">Reset</button>
-      </section>
-    </form>
+        <div class="total">
+          <div class="text">
+            <p class="result--label">Total</p>
+            <p class="person">/ person</p>
+          </div>
+          <div id="resultTotal" class="result--amount">$0.00</div>
+        </div>
+
+        <button class="resetButton">Reset</button>
+      </div>
+    </div>
   </body>
 </html>
