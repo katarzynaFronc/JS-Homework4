@@ -4,6 +4,7 @@ const tipPerPerson = document.getElementById("resultAmount");
 const totalPerPerson = document.getElementById("resultTotal");
 const tips = document.querySelectorAll(".form--tip");
 const tipCustom = document.querySelector(".customTip");
+const resetButton = document.querySelector(".resetButton");
 
 billInput.addEventListener("input", billInputFun);
 peopleInput.addEventListener("input", peopleInputFun);
@@ -11,9 +12,10 @@ tips.forEach(function (val) {
   val.addEventListener("click", handleClick);
 });
 tipCustom.addEventListener("input", tipInputFun);
+resetButton.addEventListener("click", reset);
 
-billInput.value = "0.0";
-peopleInput.value = "1";
+// billInput.value = "0.0";
+// peopleInput.value = "1";
 tipPerPerson.innerHTML = "$" + (0.0).toFixed(2);
 totalPerPerson.innerHTML = "$" + (0.0).toFixed(2);
 
@@ -53,4 +55,14 @@ function calculateTip() {
     tipPerPerson.innerHTML = "$" + tipAmount.toFixed(2);
     totalPerPerson.innerHTML = "$" + total.toFixed(2);
   }
+}
+
+function reset() {
+  billInput.value = "";
+  billInputFun();
+  peopleInput.value = "";
+  peopleInputFun();
+  tipCustom.value = "";
+  tipPerPerson.innerHTML = "$" + (0.0).toFixed(2);
+  totalPerPerson.innerHTML = "$" + (0.0).toFixed(2);
 }
