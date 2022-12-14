@@ -40,7 +40,7 @@ label {
 }
 
 .form--inputField {
-  border: none;
+  border: solid 2px var(--color-neutral-very-light-grayish-cyan);
   outline: none;
   padding: 5px;
   background-color: var(--color-neutral-very-light-grayish-cyan);
@@ -52,6 +52,20 @@ label {
   width: 95%;
   margin: auto;
   margin-bottom: 30px;
+}
+
+.form--inputField:hover {
+  border: solid 2px var(--color-primary-strong-cyan);
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .inputBill {
@@ -86,6 +100,11 @@ label {
 }
 
 .form--tip:hover {
+  color: var(--color-neutral-very-dark-cyan);
+  background-color: var(--color-neutral-light-grayish-cyan);
+}
+
+.form--tip:focus {
   color: var(--color-neutral-very-dark-cyan);
   background-color: var(--color-primary-strong-cyan);
 }
@@ -130,9 +149,14 @@ label {
   border-radius: 5px;
   text-transform: uppercase;
   padding: 10px 0 10px 0;
-  cursor: pointer;
   width: 100%;
+  opacity: 0.2;
 }
+
+/* .resetButton:hover {
+  background-color: var(--color-neutral-light-grayish-cyan);
+  opacity: 1;
+} */
 
 .customTip {
   box-sizing: border-box;

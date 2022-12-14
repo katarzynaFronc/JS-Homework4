@@ -5,6 +5,13 @@ const totalPerPerson = document.getElementById("resultTotal");
 const tips = document.querySelectorAll(".form--tip");
 const tipCustom = document.querySelector(".customTip");
 const resetButton = document.querySelector(".resetButton");
+const error = document.querySelector(".error");
+
+// -----default state of reset button----- //
+
+resetButton.disabled = true;
+
+// --------------------------------------- //
 
 billInput.addEventListener("input", billInputFun);
 peopleInput.addEventListener("input", peopleInputFun);
@@ -14,14 +21,14 @@ tips.forEach(function (val) {
 tipCustom.addEventListener("input", tipInputFun);
 resetButton.addEventListener("click", reset);
 
-// billInput.value = "0.0";
-// peopleInput.value = "1";
 tipPerPerson.innerHTML = "$" + (0.0).toFixed(2);
 totalPerPerson.innerHTML = "$" + (0.0).toFixed(2);
 
 let billValue = 0.0;
 let peopleValue = 1;
 let tipValue = 0.0;
+
+// --------tip calculator------- //
 
 function billInputFun() {
   billValue = parseFloat(billInput.value);
@@ -31,6 +38,15 @@ function billInputFun() {
 function peopleInputFun() {
   peopleValue = parseFloat(peopleInput.value);
   calculateTip();
+
+  if (peopleValue < 1) {
+    error.style.display = "flex";
+    peopleInput.style.border = "solid 2px red";
+  } else {
+    error.style.display = "none";
+    peopleInput.style.border = "solid 2px var(--color-neutral-very-light-grayish-cyan)";
+    calculateTip();
+  }
 }
 
 function tipInputFun() {
@@ -57,6 +73,28 @@ function calculateTip() {
   }
 }
 
+// ------------------------------ //
+
+// -----buttonState function----- //
+
+billInput.addEventListener("keyup", buttonState);
+peopleInput.addEventListener("keyup", buttonState);
+tipCustom.addEventListener("keyup", buttonState);
+
+function buttonState() {
+  if (billInput.value == "" && peopleInput.value == "" && tipCustom.value == 0) {
+    resetButton.disabled = true;
+  } else {
+    resetButton.disabled = false;
+    resetButton.style.opacity = "1";
+    resetButton.style.cursor = "pointer";
+  }
+}
+
+// ---------------------------- //
+
+// -----reset function----- //
+
 function reset() {
   billInput.value = "";
   billInputFun();
@@ -66,3 +104,5 @@ function reset() {
   tipPerPerson.innerHTML = "$" + (0.0).toFixed(2);
   totalPerPerson.innerHTML = "$" + (0.0).toFixed(2);
 }
+
+// ----------------------- //
