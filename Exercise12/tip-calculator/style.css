@@ -21,42 +21,37 @@ body {
   height: 100vh;
   margin: 0;
 }
-/* ----------------------------- */
 
-/* -----------content----------- */
+/* -----------form----------- */
 
 .tipCalculator {
   background-color: var(--color-neutral-white);
   display: flex;
   flex-direction: column;
-  padding: 20px;
   border-radius: 20px 20px 0 0;
   margin-top: 150px;
+  padding: 30px;
 }
 
-label {
+.form__label {
   color: var(--color-neutral-dark-grayish-cyan);
   font-size: 0.65rem;
 }
 
-.form--inputField {
+.form__input {
+  background-color: var(--color-neutral-very-light-grayish-cyan);
   border: solid 2px var(--color-neutral-very-light-grayish-cyan);
   outline: none;
   padding: 5px;
-  background-color: var(--color-neutral-very-light-grayish-cyan);
+  padding-right: 15px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 30px;
   text-align: right;
   font-family: "Space Mono", monospace;
   font-size: 1rem;
   color: var(--color-neutral-very-dark-cyan);
-  border-radius: 5px;
-  width: 95%;
-  margin: auto;
-  margin-bottom: 30px;
-}
-
-.form--inputField:hover {
-  border: solid 2px var(--color-primary-strong-cyan);
-  cursor: pointer;
 }
 
 input::-webkit-outer-spin-button,
@@ -68,109 +63,116 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.inputBill {
-  background-image: url("images/icon-dollar.svg");
-  background-repeat: no-repeat;
-  background-position: 5% 50%;
+.form__input:hover {
+  border: solid 2px var(--color-primary-strong-cyan);
+  cursor: pointer;
 }
 
-.inputPeople {
-  background-image: url("images/icon-person.svg");
-  background-repeat: no-repeat;
-  background-position: 5% 50%;
-}
-
-.form--tipButtons {
+.form__tips {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 147px);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
-  row-gap: 1em;
-  margin: auto;
+  gap: 0.8em;
 }
-.form--tip {
+
+.tips--button {
   background-color: var(--color-neutral-very-dark-cyan);
   color: var(--color-neutral-white);
-  height: 46px;
   border: none;
   outline: none;
   border-radius: 5px;
+  height: 50px;
   font-family: "Space Mono", monospace;
   font-size: 1rem;
   cursor: pointer;
 }
 
-.form--tip:hover {
+.tips--button:hover {
   color: var(--color-neutral-very-dark-cyan);
   background-color: var(--color-neutral-light-grayish-cyan);
 }
 
-.form--tip:focus {
+.tips--button:focus {
   color: var(--color-neutral-very-dark-cyan);
   background-color: var(--color-primary-strong-cyan);
 }
 
+.form__people {
+  display: flex;
+  justify-content: space-between;
+}
+
+.billInput {
+  background-image: url("images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
+
+.peopleInput {
+  background-image: url("images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 5% 50%;
+}
+
+.tips--custom {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.error {
+  color: rgb(187, 45, 45);
+  display: none;
+}
+
+/* ----------result---------- */
+
 .result {
   background-color: var(--color-neutral-very-dark-cyan);
   color: var(--color-neutral-white);
-  padding: 30px 20px;
+  padding: 30px 20px 20px;
   border-radius: 15px;
 }
 
-.tipAmount,
-.total {
+.result__tipAmount,
+.result__totalAmount {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.8rem;
+  margin-bottom: 10px;
 }
 
-.text p {
+.result__label {
   font-size: 0.6rem;
+}
+
+.label--label {
   margin: 0;
 }
 
-.person {
+.label--person {
   color: var(--color-neutral-grayish-cyan);
+  margin: 0;
 }
 
-.result--amount {
+.result__Amount {
   font-size: 1.5rem;
   color: var(--color-primary-strong-cyan);
 }
 
 .resetButton {
-  text-align: center;
-  color: var(--color-neutral-very-dark-cyan);
   background-color: var(--color-primary-strong-cyan);
-  font-family: "Space Mono", monospace;
-  font-size: 0.7rem;
   border: none;
   outline: none;
   border-radius: 5px;
-  text-transform: uppercase;
+  margin-top: 20px;
   padding: 10px 0 10px 0;
   width: 100%;
   opacity: 0.2;
-}
-
-/* .resetButton:hover {
-  background-color: var(--color-neutral-light-grayish-cyan);
-  opacity: 1;
-} */
-
-.customTip {
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.labelPeople {
-  display: flex;
-  justify-content: space-between;
-}
-
-.error {
-  color: red;
-  display: none;
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--color-neutral-very-dark-cyan);
+  text-align: center;
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 1000px) {
@@ -178,68 +180,52 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .form--inputField {
-    width: 415px;
-    padding: 10px;
+    background-position: top 100px right 50%;
   }
 
   .tipCalculator {
-    width: 990px;
     display: flex;
     flex-direction: row;
+    margin-top: 250px;
     border-radius: 20px;
-    padding: 2rem;
-    height: 480px;
+    padding: 40px;
+    gap: 40px;
+    width: 910px;
+    height: 420px;
   }
 
   #form {
     display: flex;
     flex-direction: column;
-    margin: auto;
-  }
-
-  .inputBill {
     margin: 0;
-    margin-bottom: 3em;
+    width: 55%;
   }
 
-  .inputPeople {
-    margin: 0;
+  .form__label {
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
 
-  .form--tipButtons {
-    grid-template-columns: repeat(auto-fill, 125px);
-    width: 435px;
-    margin: 0;
-    margin-bottom: 2em;
-  }
-
-  .customTip {
-    box-sizing: border-box;
-    width: 125px;
-    height: 46px;
+  .form__tips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
   }
 
   .result {
-    margin-left: auto;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-    padding: 48px 38px;
+    width: 45%;
+    padding: 50px 40px;
   }
 
-  .text p {
+  .result__label {
     font-size: 0.7rem;
   }
 
-  .result--amount {
+  .result__Amount {
     font-size: 2rem;
   }
 
   .resetButton {
-    margin-top: auto;
+    margin-top: 120px;
   }
 }
